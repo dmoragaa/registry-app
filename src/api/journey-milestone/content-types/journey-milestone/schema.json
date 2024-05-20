@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "journey_milestones",
+  "info": {
+    "singularName": "journey-milestone",
+    "pluralName": "journey-milestones",
+    "displayName": "JourneyMilestone"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "journey": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::journey.journey",
+      "inversedBy": "milestones"
+    },
+    "type": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "required": true
+    },
+    "timestamp": {
+      "type": "datetime"
+    },
+    "location": {
+      "type": "json"
+    },
+    "comments": {
+      "type": "text"
+    },
+    "attachment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
